@@ -11,4 +11,10 @@ class ProductsController extends Controller
          $findedProducts = DB::table('products')->where('category_id', '=', $id)->get();
          return view('products.getByCategoryId')->with('products', $findedProducts);
     }
+
+
+        public function home()
+        {
+            return view('home');
+        }
 }
