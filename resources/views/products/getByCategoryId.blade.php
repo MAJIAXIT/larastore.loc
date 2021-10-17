@@ -14,7 +14,11 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <button type="button" class="btn btn-sm btn-outline-secondary">В корзину</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                            <form method="post" action="/productDescription">
+                                @csrf
+                                <input type="text" id="id" name="id" value="{{ $product->id }}" hidden>
+                            <button type="submit" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                            </form>
                         </div>
                         <small class="text-muted">${{$product->price}}</small>
                     </div>
