@@ -7,7 +7,7 @@
         @foreach($products as $product)
         <div class="col">
             <div class="card shadow-sm">
-                <img src="{{asset($product->image_path)}}" >
+                <img src="{{asset($product->image_path)}}">
 
                 <div class="card-body">
                     <p class="card-text">{{$product->name}}</p>

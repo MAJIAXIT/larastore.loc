@@ -26,17 +26,24 @@
             <div class="container px-4">
                 <div class="row gx-4">
                     <div class="col">
-                        <a type="button" class="p-4 btn btn-outline-secondary" href="/productsByCategory/1">iPhone</a>
+                        <a type="button" class="p-4 btn" href="/productsByCategory/1">
+                            <img src="/icons/iphone-icon.png" alt="iPhone">
+                        </a>
                     </div>
                     <div class="col">
-                        <a type="button" class="p-4 btn btn-outline-secondary" href="/productsByCategory/2">iPad</a>
+                        <a type="button" class="p-4 btn" href="/productsByCategory/2">
+                            <img src="/icons/ipad-icon.png" alt="iPad">
+                        </a>
                     </div>
                     <div class="col">
-                        <a type="button" class="p-4 btn btn-outline-secondary" href="/productsByCategory/3">MacBook</a>
+                        <a type="button" class="p-4 btn" href="/productsByCategory/3">
+                            <img src="/icons/mac-icon.png" alt="Mac Book">
+                        </a>
                     </div>
                     <div class="col">
-                        <img src="/icons/applewatch-icon.jpg" alt="applewatch">
-                        <a type="button" class="p-4 btn btn-outline-secondary" href="/productsByCategory/4">Watch</a>
+                        <a  type="button" class="p-4 btn" href="/productsByCategory/4">
+                            <img src="/icons/applewatch-icon.png" alt="Apple Watch">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -67,7 +74,7 @@
 <footer class="text-muted py-5">
     <div class="container">
         <small>All rights reserved</small><br>
-        <small>C2022</small>
+        <small>©2022</small>
     </div>
 </footer>
 
