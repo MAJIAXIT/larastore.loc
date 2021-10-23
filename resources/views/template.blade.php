@@ -41,9 +41,16 @@
                         </a>
                     </div>
                     <div class="col">
-                        <a  type="button" class="p-4 btn" href="/productsByCategory/4">
+                        <a type="button" class="p-4 btn" href="/productsByCategory/4">
                             <img src="/icons/applewatch-icon.png" alt="Apple Watch">
                         </a>
+                    </div>
+                    <div class="col">
+                        <h4 class="text-white">User</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="/users/signin" class="text-white">Sign In</a></li>
+                            <li><a href="" class="text-white">Sign Up</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

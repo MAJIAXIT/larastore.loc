@@ -37,35 +37,35 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name' => 'Apple Watch series 6',
-                'description' => 'Apple Watch series 6 is one oth the most selling watches in the world',
+                'description' => 'Apple Watch series 6 is the bestseller in the world of smart watches ',
                 'image_path' => 'images/products/applewatch6.png',
                 'price' => 300,
                 'category_id' => 4
             ],
             [
                 'name' => 'Apple Watch series 7',
-                'description' => 'Apple Watch series 7 are newest wathes from apple',
+                'description' => 'Apple Watch series 7 are newest watches from apple',
                 'image_path' => 'images/products/applewatch7.png',
                 'price' => 400,
                 'category_id' => 4
             ],
             [
                 'name' => 'Apple Watch SE series',
-                'description' => 'Apple Watch SE series are the collaboration with nike',
+                'description' => 'Apple Watch SE series - collaboration apple with nike',
                 'image_path' => 'images/products/applewatchse.png',
                 'price' => 350,
                 'category_id' => 4
             ],
             [
                 'name' => 'Ipad Air',
-                'description' => 'Ipad air is the most-selled tablet in the world',
+                'description' => 'Ipad air is the bestseller in the world of tablets',
                 'image_path' => 'images/products/ipadair.png',
                 'price' => 500,
                 'category_id' => 2
             ],
             [
                 'name' => 'Ipad Mini',
-                'description' => 'Ipad mini is the smollest tablet in the world',
+                'description' => 'Ipad mini is the smallest tablet in the world',
                 'image_path' => 'images/products/ipadmini.png',
                 'price' => 600,
                 'category_id' => 2
@@ -79,7 +79,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name' => 'iPhone 10',
-                'description' => 'iPhone 10 is the phone of the real men',
+                'description' => 'iPhone 10 is the phone for the real men',
                 'image_path' => 'images/products/iphone10.png',
                 'price' => 400,
                 'category_id' => 1
@@ -93,18 +93,26 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name' => 'Macbook Air (Intel)',
-                'description' => 'Macbook on intel is very strong',
+                'description' => 'Macbook air with intel core is very powerful',
                 'image_path' => 'images/products/macbookair.png',
                 'price' => 1200,
                 'category_id' => 3
             ],
             [
                 'name' => 'Macbook Pro (Intel)',
-                'description' => 'Macbook pro on intel is very strong',
+                'description' => 'Macbook pro with intel core is very powerful',
                 'image_path' => 'images/products/macbookpro.png',
                 'price' => 2000,
                 'category_id' => 3
             ],
+        ]);
+        DB::table('users')->insert([
+            [
+            'name' => 'Иван',
+            'email' => 'ivan@yandex.ru',
+            'login' => 'ivan',
+            'password' => '123'
+            ]
         ]);
     }
 }
