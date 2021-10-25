@@ -20,7 +20,7 @@
                             <button type="submit" class="btn btn-sm btn-outline-secondary">Подробнее</button>
                             </form>
                         </div>
-                        <small class="text-muted">${{$product->price}}</small>
+                        <small>${{$product->price}}</small>
                     </div>
                 </div>
             </div>

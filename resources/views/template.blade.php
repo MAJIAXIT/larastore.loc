@@ -14,7 +14,6 @@
 
 </head>
 <body>
-
 <header>
     <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
@@ -49,7 +48,8 @@
                         <h4 class="text-white">User</h4>
                         <ul class="list-unstyled">
                             <li><a href="/users/signin" class="text-white">Sign In</a></li>
-                            <li><a href="" class="text-white">Sign Up</a></li>
+                            <li><a href="/users/signup" class="text-white">Sign Up</a></li>
+                            <li><a href="/users/logout" class="text-white">Log Out</a></li>
                         </ul>
                     </div>
                 </div>

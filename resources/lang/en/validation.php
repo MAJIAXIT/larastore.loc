@@ -130,9 +130,9 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'attribute-name' => ['not_found'
         ],
+        'not_found' => 'The :attribute is not found.',
     ],
 
     /*

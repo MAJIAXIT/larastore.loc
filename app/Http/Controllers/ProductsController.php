@@ -20,8 +20,9 @@ class ProductsController extends Controller
         return view('products.productDescription')->with('products', $product);
     }
 
-    public function home()
+    public function home(Request $request)
     {
-        return view('home');
+        $user = session('user');
+        return view('home')->with('user', $user);
     }
 }

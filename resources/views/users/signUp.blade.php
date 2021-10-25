@@ -26,7 +26,7 @@
 <body class="text-center">
 
 <main class="form-signin">
-    <form method="post" action="/users/signin/check">
+    <form method="post" action="/users/signup/check">
         @csrf
         <h1 class="h3 mb-3 fw-normal">Пожалуйста войдите</h1>
 
@@ -40,28 +40,29 @@
             </div>
         @endif
 
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingInput" name="name">
+            <label for="floatingInput">Имя</label>
+        </div><br>
+
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingInput" name="email">
+            <label for="floatingInput">Email</label>
+        </div><br>
 
         <div class="form-floating">
             <input type="text" class="form-control" id="floatingInput" name="login">
             <label for="floatingInput">Логин</label>
-        </div>
+        </div><br>
 
         <div class="form-floating">
             <input type="password" class="form-control" id="floatingPassword" name="password">
             <label for="floatingPassword">Пароль</label>
-        </div>
+        </div><br>
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> Запомнить меня
-            </label>
-        </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Зарегестрироваться</button>
 
     </form>
 </main>
-
-
-
 </body>
 </html>

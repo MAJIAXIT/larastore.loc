@@ -3,5 +3,11 @@
 @section('title')Home @endsection
 
 @section('content')
-<h1>Welcome to our store!</h1>
+    @isset($user)
+        <h1>Welcome to our store, {{$user->name}}!</h1>
+    @endisset
+
+    @empty($user)
+        <h1>Welcome to our store!</h1>
+    @endempty
 @endsection
