@@ -3,10 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 use mysql_xdevapi\Exception;
+
+/**
+ * Configure the validator instance.
+ *
+ * @param  \Illuminate\Validation\Validator  $validator
+ * @return void
+ */
 
 class UsersController extends Controller
 {
@@ -33,7 +42,7 @@ class UsersController extends Controller
         )->first();
 
         if ($user == null) {
-            abort(404);
+            return redirect('users/signin')->withErrors("User not found")->withInput();
         } else {
             Session::put('user', $user);
             return redirect('/');
@@ -64,5 +73,28 @@ class UsersController extends Controller
             'name' => 'required|min:3|max:20',
             'email' => 'required|min:3|max:20'
         ]);
+
+        $user = new User();
+        $user->login = $request->input('login');
+        $user->password = $request->input('password');
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+
+        $user_exists = DB::table('users')->where(
+            [
+                ['login', '=', $user->login]
+            ]
+        )->first();
+
+        if ($user_exists == null) {
+
+            $user->save();
+            Session::forget('user');
+            Session::put('user', $user);
+            return redirect('/');
+
+        } else {
+            return redirect('users/signup')->withErrors("User with this login already exist")->withInput();
+        }
     }
 }

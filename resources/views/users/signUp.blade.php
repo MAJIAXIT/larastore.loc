@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Форма входа</title>
+    <title>Форма регистрации</title>
     <link href="{{asset('vendor/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
     <style>
         .bd-placeholder-img {
@@ -28,7 +28,7 @@
 <main class="form-signin">
     <form method="post" action="/users/signup/check">
         @csrf
-        <h1 class="h3 mb-3 fw-normal">Пожалуйста войдите</h1>
+        <h1 class="h3 mb-3 fw-normal">Регестрация</h1>
 
         @if($errors->any())
             <div class="alert alert-danger">
