@@ -7,7 +7,7 @@ Route::get('/productsByCategory/{id}', 'ProductsController@getByCategoryId');
 
 Route::get('/', 'ProductsController@home');
 
-Route::get('/productDescription', 'ProductsController@productDescription');
+Route::post('/productDescription', 'ProductsController@productDescription');
 
 Route::get('/users/signin', 'UsersController@signIn');
 
@@ -22,5 +22,3 @@ Route::get('/users/signup', 'UsersController@signUp');
 Route::get('/users/signup/check', 'UsersController@signUpCheck');
 
 Route::post('/users/signup/check', 'UsersController@signUpCheck');
-
-Route::get('/addtobasket', 'ProductsController@addToBasket');

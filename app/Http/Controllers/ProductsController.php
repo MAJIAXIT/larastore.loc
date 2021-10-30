@@ -20,11 +20,6 @@ class ProductsController extends Controller
         return view('products.productDescription')->with('products', $product);
     }
 
-    public function addToBasket()
-    {
-        return 'product in the basket';
-    }
-
     public function home(Request $request)
     {
         $user = session('user');
