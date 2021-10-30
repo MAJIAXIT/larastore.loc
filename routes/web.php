@@ -19,4 +19,6 @@ Route::get('/users/logout', 'UsersController@logOut');
 
 Route::get('/users/signup', 'UsersController@signUp');
 
+Route::get('/users/signup/check', 'UsersController@signUpCheck');
+
 Route::post('/users/signup/check', 'UsersController@signUpCheck');
