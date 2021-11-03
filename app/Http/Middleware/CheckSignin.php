@@ -14,7 +14,7 @@ class CheckSignin
      * @param  \Closure  $next
      * @return mixed
      */
-    
+
     public function handle($request, Closure $next)
     {
         $user = Session::get('user');
@@ -22,7 +22,7 @@ class CheckSignin
         if ($user!=null) {
             return $next($request);
         }else{
-            return redirect('/users/signin');
+            return redirect('/users/signin')->withErrors("You must sign in to visit this page.")->withInput();
         }
     }
 }
