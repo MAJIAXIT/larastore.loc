@@ -14,6 +14,7 @@
 
 </head>
 <body>
+{{--
 <header>
     <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
@@ -68,22 +69,84 @@
         </div>
     </div>
 </header>
+--}}
 
-<main>
-    <div class="album py-5 bg-light">
-        <div class="container">
-            @yield('content')
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                <div class="sticky-top d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <a href="/"
+                       class=" d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <h1 class="d-none d-sm-inline link">Store</h1>
+                    </a>
+
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+                        id="menu">
+                        <li class="nav-item">
+                            <a href="/productsByCategory/1" class="nav-link align-middle px-0">
+                                <img src="/icons/iphone-icon.ico"> <h4 class="ms-1 d-none d-sm-inline text-white">
+                                    iPhone</h4>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/productsByCategory/2" class="nav-link align-middle px-0">
+                                <img src="/icons/ipad-icon.ico"> <h4 class="ms-1 d-none d-sm-inline text-white">
+                                    iPad</h4>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/productsByCategory/3" class="nav-link align-middle px-0">
+                                <img src="/icons/mac-icon.ico"> <h4 class="ms-1 d-none d-sm-inline text-white">Mac</h4>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/productsByCategory/4" class="nav-link align-middle px-0">
+                                <img src="/icons/applewatch-icon.ico"> <h4 class="ms-1 d-none d-sm-inline text-white">
+                                    Watch</h4>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="dropdown pb-4 fs-5">
+                        <a href="#"
+                           class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                           id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30"
+                                 class="rounded-circle">
+                            <span class="d-none d-sm-inline mx-1">
+                                @isset($user)
+                                    <h6>{{$user->name}}</h6>
+                                @endisset
+
+                                @empty($user)
+                                    <h6>User</h6>
+                                @endempty
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                            <li><a class="dropdown-item" href="/users/signin">Sign In</a></li>
+                            <li><a class="dropdown-item" href="/users/signup">sign Up</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/users/logout">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        <div class="col-sm p-3 min-vh-100">
+            <div class="album py-5 ">
+                @yield('content')
+            </div>
         </div>
-    </div>
 
-</main>
-
-<footer class="text-muted py-5">
-    <div class="container">
-        <small>All rights reserved</small><br>
-        <small>©2022</small>
     </div>
-</footer>
+</div>
 
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 </body>
