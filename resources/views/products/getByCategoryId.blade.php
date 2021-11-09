@@ -13,12 +13,7 @@
                         <h5 class="card-text">{{$product->name}}</h5>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-
-                                <form method="get" action="/addtobasket">
-                                    <input type="text" id="id" name="id" value="{{ $product->id }}" hidden>
-                                    <button type="submit" class="btn btn-sm btn-outline-secondary">В корзину</button>
-                                </form>
-
+                                <button class="btn btn-sm btn-outline-secondary"  onclick="buttonAddClick({{$product->id}})" >В корзину</button>
                                 <form method="get" action="/productDescription">
                                     <input type="text" id="id" name="id" value="{{ $product->id }}" hidden>
                                     <button type="submit" class="btn btn-sm btn-outline-secondary">Подробнее</button>
@@ -31,4 +26,5 @@
             </div>
         @endforeach
     </div>
+    <script src="{{asset('myjs/addNewItemToCart.js')}}"></script>
 @endsection

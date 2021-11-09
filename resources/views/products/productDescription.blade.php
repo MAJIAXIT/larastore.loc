@@ -11,11 +11,10 @@
             <small>${{$product->price}}</small><br>
 
             <div class="btn-group">
-                <form method="get" action="/addtobasket">
-                    <input type="text" id="id" name="id" value="{{ $product->id }}" hidden>
-                    <button type="submit" class="btn btn-sm btn-outline-secondary">В корзину</button>
+                    <button onclick="buttonAddClick({{$product->id}})" class="btn btn-sm btn-outline-secondary">В корзину</button>
                 </form>
             </div>
         </div>
     @endforeach
+    <script src="{{asset('myjs/addNewItemToCart.js')}}"></script>
 @endsection

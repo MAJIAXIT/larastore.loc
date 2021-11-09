@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -9,8 +9,9 @@ class ProductsController extends Controller
 {
     public function getByCategoryId($id)
     {
-        $findedProducts = DB::table('products')->where('category_id', '=', $id)->get();
-        return view('products.getByCategoryId')->with('products', $findedProducts);
+        $findProducts = Product::where('category_id', '=', $id)->get();
+
+        return view('products.getByCategoryId')->with('products', $findProducts);
     }
 
     public function productDescription(Request $request)
