@@ -13,64 +13,65 @@
     <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.js')}}"></script>
     <script src="{{asset('vendor/bootstrap/js/jquery-3.6.0.js')}}"></script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+
     @php
         $user = session('user');
     @endphp
 
 </head>
+
+{{--<li class="nav-item">
+    <a href="/productsByCategory/3" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Mac Book">
+        <img src="/icons/mac-icon.ico" width="50" height="50">
+    </a>
+</li>--}}
+
 <body>
 <div class="container-fluid">
-    <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-            <div
-                class="sticky-top d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="/" id="currentPage"
-                   class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <h1 class="display-6">Store</h1>
+    <div class="row">
+        <div class="col-sm-auto bg-light sticky-top">
+            <div class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top">
+                <a href="/" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip"
+                   data-bs-placement="right" data-bs-original-title="Icon-only">
+                    <i class="bi-apple fs-1"></i>
                 </a>
 
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
-                    id="menu">
+                <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center">
                     <li class="nav-item">
-                        <a href="/productsByCategory/1" onclick="currentPage()" id="linkPage"
-                           class="nav-link align-middle px-0">
-                            <img src="/icons/iphone-icon.ico" width="50" height="50"> <h5
-                                class="ms-1 d-none d-sm-inline text-white">
-                                iPhone</h5>
+                        <a href="/productsByCategory/1" class="nav-link py-3 px-2" data-bs-toggle="tooltip"
+                           data-bs-placement="right" data-bs-original-title="iPhone">
+                            <i class="bi-phone fs-1"></i>
                         </a>
                     </li>
 
-                    <li class="nav-item" onclick="currentPage()">
-                        <a href="/productsByCategory/2" id="linkPage" class="nav-link align-middle px-0">
-                            <img src="/icons/ipad-icon.ico" width="50" height="50"> <h5
-                                class="ms-1 d-none d-sm-inline text-white">
-                                iPad</h5>
+                    <li class="nav-item">
+                        <a href="/productsByCategory/2" class="nav-link py-3 px-2" data-bs-toggle="tooltip"
+                           data-bs-placement="right" data-bs-original-title="iPad">
+                            <i class="bi-tablet fs-1"></i>
                         </a>
                     </li>
 
-                    <li class="nav-item" onclick="currentPage()">
-                        <a href="/productsByCategory/3" id="linkPage" class="nav-link align-middle px-0">
-                            <img src="/icons/mac-icon.ico" width="50" height="50"> <h5
-                                class="ms-1 d-none d-sm-inline text-white">Mac</h5>
+                    <li class="nav-item">
+                        <a href="/productsByCategory/3" class="nav-link py-3 px-2" data-bs-toggle="tooltip"
+                           data-bs-placement="right" data-bs-original-title="Mac Book">
+                            <i class="bi-laptop fs-1"></i>
                         </a>
                     </li>
 
-                    <li class="nav-item" onclick="currentPage()">
-                        <a href="/productsByCategory/4" id="linkPage" class="nav-link align-middle px-0">
-                            <img src="/icons/applewatch-icon.ico" width="50" height="50"> <h5
-                                class="ms-1 d-none d-sm-inline text-white">
-                                Watch</h5>
+                    <li class="nav-item">
+                        <a href="/productsByCategory/4" class="nav-link py-3 px-2" data-bs-toggle="tooltip"
+                           data-bs-placement="right" data-bs-original-title="Apple Watch">
+                            <i class="bi-smartwatch fs-1"></i>
                         </a>
                     </li>
                 </ul>
-                <hr>
-                <div class="dropdown pb-4 fs-5">
+                <div class="dropdown">
                     <a href="#"
-                       class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                       id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="/icons/user.png" width="30" height="30"
-                             class="rounded-circle">
-                        <span class="d-none d-sm-inline mx-1">
+                       class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle"
+                       id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi-person-circle h2"></i>
+                        {{--<span class="d-none d-sm-inline mx-1">
                                 @isset($user)
                                 <h6>{{$user->name}}</h6>
                             @endisset
@@ -78,17 +79,13 @@
                             @empty($user)
                                 <h6>User</h6>
                             @endempty
-                            </span>
+                            </span>--}}
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                    <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
                         @empty($user)
                             <li><a class="dropdown-item" href="/users/signin">Sign In</a></li>
                             <li><a class="dropdown-item" href="/users/signup">sign Up</a></li>
                         @endempty
-                        {{--
-                                                <li>
-                                                    <hr class="dropdown-divider">
-                                                </li>--}}
 
                         @isset($user)
                             <li><a class="dropdown-item" href="/users/logout">Sign out</a></li>
@@ -104,10 +101,8 @@
                 @yield('content')
             </div>
         </div>
-
     </div>
 </div>
-<script src="public/myjs/sidebar.js"></script>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

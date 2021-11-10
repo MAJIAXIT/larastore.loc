@@ -14,21 +14,15 @@ class ProductsController extends Controller
         return view('products.getByCategoryId')->with('products', $findProducts);
     }
 
-    public function productDescription(Request $request)
+    public function productDescription($id)
     {
-        $id = $request->input('id');
         $product = DB::table('products')->where('id', '=', $id)->get();
         return view('products.productDescription')->with('products', $product);
     }
 
-    public function addToBasket()
-    {
-        return 'product in the basket';
-    }
 
-    public function home(Request $request)
+    public function home()
     {
-        $user = session('user');
-        return view('home')->with('user', $user);
+        return view('home');
     }
 }

@@ -13,11 +13,10 @@
                         <h5 class="card-text">{{$product->name}}</h5>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button class="btn btn-sm btn-outline-secondary"  onclick="buttonAddClick({{$product->id}})" >В корзину</button>
-                                <form method="get" action="/productDescription">
-                                    <input type="text" id="id" name="id" value="{{ $product->id }}" hidden>
-                                    <button type="submit" class="btn btn-sm btn-outline-secondary">Подробнее</button>
-                                </form>
+                                <button class="btn btn-sm btn-outline-secondary"
+                                        onclick="buttonAddClick({{$product->id}})">В корзину
+                                </button>
+                                <a class="btn btn-sm btn-outline-secondary" href="/productDescription/{{$product->id}}">Подробнее</a>
                             </div>
                             <small>${{$product->price}}</small>
                         </div>

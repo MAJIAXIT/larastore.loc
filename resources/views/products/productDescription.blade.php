@@ -11,8 +11,7 @@
             <small>${{$product->price}}</small><br>
 
             <div class="btn-group">
-                    <button onclick="buttonAddClick({{$product->id}})" class="btn btn-sm btn-outline-secondary">В корзину</button>
-                </form>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="buttonAddClick({{$product->id}})">В корзину</button>
             </div>
         </div>
     @endforeach
