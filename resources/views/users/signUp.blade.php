@@ -61,9 +61,9 @@
         </div><br>
 
         <button class="w-100 btn btn-lg btn-primary" type="submit">Зарегестрироваться</button>
-
-        Уже есть аккаунт? <a href="/users/signin">Войти</a>
     </form>
+    <br>
+    Уже есть аккаунт? <a href="/users/signin">Войти</a>
 </main>
 </body>
 </html>

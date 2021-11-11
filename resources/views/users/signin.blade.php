@@ -39,8 +39,6 @@
                 </ul>
             </div>
         @endif
-
-
         <div class="form-floating">
             <input type="text" class="form-control" id="floatingInput" name="login">
             <label for="floatingInput">Логин</label>
@@ -52,8 +50,9 @@
         </div>
 
         <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
-        Ещё нет аккаунта? <a href="/users/signup">Зарегестрироваться</a>
     </form>
+    <br>
+    Ещё нет аккаунта? <a href="/users/signup">Зарегестрироваться</a>
 </main>
 
 

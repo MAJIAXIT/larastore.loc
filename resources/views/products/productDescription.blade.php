@@ -3,17 +3,23 @@
 @section('title')Description @endsection
 
 @section('content')
-    @foreach($products as $product)
+    <div class="row">
         <div class="container">
-            <img src="{{asset($product->image_path)}}">
-            <h3>{{$product->name}}</h3>
-            <h6>{{$product->description}}</h6>
-            <small>${{$product->price}}</small><br>
+            @foreach($products as $product)
+                <div class="col-md-12">
+                <img src="{{asset($product->image_path)}}" class="img-fluid">
+                <h3>{{$product->name}}</h3>
+                <h6>{{$product->description}}</h6>
+                <small>${{$product->price}}</small><br>
 
-            <div class="btn-group">
-                    <button class="btn btn-sm btn-outline-secondary" onclick="buttonAddClick({{$product->id}})">В корзину</button>
-            </div>
+                <div class="btn-group">
+                    <button class="btn btn-sm btn-outline-secondary" onclick="buttonAddClick({{$product->id}})">В
+                        корзину
+                    </button>
+                </div>
+                </div>
+            @endforeach
         </div>
-    @endforeach
+    </div>
     <script src="{{asset('myjs/addNewItemToCart.js')}}"></script>
 @endsection

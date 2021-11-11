@@ -41,28 +41,35 @@
                     <li class="nav-item">
                         <a href="/productsByCategory/1" class="nav-link py-3 px-2" data-bs-toggle="tooltip"
                            data-bs-placement="right" data-bs-original-title="iPhone">
-                            <i class="bi-phone fs-1"></i>
+                            <i class="bi-phone fs-1" style="color: black"></i>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="/productsByCategory/2" class="nav-link py-3 px-2" data-bs-toggle="tooltip"
                            data-bs-placement="right" data-bs-original-title="iPad">
-                            <i class="bi-tablet fs-1"></i>
+                            <i class="bi-tablet fs-1" style="color: black"></i>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="/productsByCategory/3" class="nav-link py-3 px-2" data-bs-toggle="tooltip"
                            data-bs-placement="right" data-bs-original-title="Mac Book">
-                            <i class="bi-laptop fs-1"></i>
+                            <i class="bi-laptop fs-1" style="color: black"></i>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="/productsByCategory/4" class="nav-link py-3 px-2" data-bs-toggle="tooltip"
                            data-bs-placement="right" data-bs-original-title="Apple Watch">
-                            <i class="bi-smartwatch fs-1"></i>
+                            <i class="bi-smartwatch  fs-1" style="color: black"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/cart/view/{{$user->id}}" class="nav-link py-3 px-2" data-bs-toggle="tooltip"
+                           data-bs-placement="right" data-bs-original-title="Cart">
+                            <i class="bi bi-basket3 fs-1" style="color: black"></i>
+                            <span class="position-absolute translate-middle badge rounded-pill bg-danger">2</span>
                         </a>
                     </li>
                 </ul>
@@ -83,13 +90,15 @@
                     </a>
                     <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
                         @empty($user)
-                            <li><a class="dropdown-item" href="/users/signin">Sign In</a></li>
-                            <li><a class="dropdown-item" href="/users/signup">sign Up</a></li>
+                            <li><a class="dropdown-item" href="/users/signin">Войти</a></li>
+                            <li><a class="dropdown-item" href="/users/signup">Зарегестрироваться</a></li>
                         @endempty
 
                         @isset($user)
-                            <li><a class="dropdown-item" href="/users/logout">Sign out</a></li>
-                            <li><a class="dropdown-item" href="/cart/view/{{$user->id}}">Cart</a></li>
+                            <li><p class="dropdown-item" style="pointer-events: none;">{{$user->name}}:</p></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="/users/logout">Выйти</a></li>
+                            <li><a class="dropdown-item" href="/cart/view/{{$user->id}}">Корзина</a></li>
                         @endisset
                     </ul>
                 </div>
