@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Models\CartItem;
 use App\Http\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -45,6 +46,8 @@ class UsersController extends Controller
             return redirect('users/signin')->withErrors("User not found")->withInput();
         } else {
             Session::put('user', $user);
+            $cartCount = DB::table('cart_items')->where('user_id', '=', $user->id)->count();
+            Session::put('cartCount', $cartCount);
             return redirect('/');
         }
     }

@@ -12,6 +12,7 @@ function buttonAddClick(productId) {
             alert("Ошибка добавления в корзину: "+msg.responseJSON.message);
         }
     });
+
 }
 
 

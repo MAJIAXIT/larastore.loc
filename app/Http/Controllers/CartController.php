@@ -23,6 +23,9 @@ class CartController extends Controller
             $cartItem->user_id = $userId;
             $cartItem->product_id = $productId;
             $cartItem->save();
+
+            $cartCount = DB::table('cart_items')->where('user_id', '=', $user->id)->count();
+            Session::put('cartCount', $cartCount);
         }
 
 }

@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
 
     @php
-        $user = session('user');
+        $user = Session::get('user');
+        $cartCount = Session::get('cartCount');
     @endphp
 
 </head>
@@ -65,13 +66,15 @@
                             <i class="bi-smartwatch  fs-1" style="color: black"></i>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="/cart/view/{{$user->id}}" class="nav-link py-3 px-2" data-bs-toggle="tooltip"
-                           data-bs-placement="right" data-bs-original-title="Cart">
-                            <i class="bi bi-basket3 fs-1" style="color: black"></i>
-                            <span class="position-absolute translate-middle badge rounded-pill bg-danger">2</span>
-                        </a>
-                    </li>
+                    @isset($user)
+                        <li class="nav-item">
+                            <a href="/cart/view/{{$user->id}}" class="nav-link py-3 px-2" data-bs-toggle="tooltip"
+                               data-bs-placement="right" data-bs-original-title="Cart">
+                                <i class="bi bi-basket3 fs-1" style="color: black"></i>
+                                <span class="position-absolute translate-middle badge rounded-pill bg-danger">{{$cartCount}}</span>
+                            </a>
+                        </li>
+                    @endisset
                 </ul>
                 <div class="dropdown">
                     <a href="#"
