@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Models\CartItem;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
@@ -15,17 +16,25 @@ class CartController extends Controller
 
         return view('cart.viewAllItemsByUserId')->with('cartItems', $cartItems);
     }
-        public function addNewItemToUser($productId){
-            $user = Session::get('user');
-            $userId = $user->id;
 
-            $cartItem = new CartItem();
-            $cartItem->user_id = $userId;
-            $cartItem->product_id = $productId;
-            $cartItem->save();
+    public function addNewItemToUser($productId)
+    {
+        $user = Session::get('user');
+        $userId = $user->id;
 
-            $cartCount = DB::table('cart_items')->where('user_id', '=', $user->id)->count();
-            Session::put('cartCount', $cartCount);
-        }
+        $cartItem = new CartItem();
+        $cartItem->user_id = $userId;
+        $cartItem->product_id = $productId;
+        $cartItem->save();
+    }
 
+    public function deleteItemById($id)
+    {
+        CartItem::destroy($id);
+    }
+
+    public function getCountItemsByUserId($userId)
+    {
+        return CartItem::where('user_id', '=', $userId)->count();
+    }
 }

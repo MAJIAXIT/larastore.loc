@@ -24,3 +24,6 @@ Route::get('/cart/view/{id}', 'CartController@viewAllItemsByUserId')->middleware
 
 Route::post('/cart/add/{productId}', 'CartController@addNewItemToUser')->middleware(CheckSigninAjax::class);
 
+Route::post('/cart/delete/{id}', 'CartController@deleteItemById')->middleware(ChecksigninAjax::class);
+
+Route::post('/cart/getCountItems/{userId}', 'CartController@getCountItemsByUserId')->middleware(ChecksigninAjax::class);

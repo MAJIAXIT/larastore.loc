@@ -12,22 +12,15 @@
     <link href="{{asset('vendor/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
     <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.js')}}"></script>
     <script src="{{asset('vendor/bootstrap/js/jquery-3.6.0.js')}}"></script>
+    <script src="{{asset('myjs/cart.js')}}"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
 
     @php
         $user = Session::get('user');
-        $cartCount = Session::get('cartCount');
     @endphp
 
 </head>
-
-{{--<li class="nav-item">
-    <a href="/productsByCategory/3" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Mac Book">
-        <img src="/icons/mac-icon.ico" width="50" height="50">
-    </a>
-</li>--}}
-
 <body>
 <div class="container-fluid">
     <div class="row">
@@ -71,9 +64,13 @@
                             <a href="/cart/view/{{$user->id}}" class="nav-link py-3 px-2" data-bs-toggle="tooltip"
                                data-bs-placement="right" data-bs-original-title="Cart">
                                 <i class="bi bi-basket3 fs-1" style="color: black"></i>
-                                <span class="position-absolute translate-middle badge rounded-pill bg-danger">{{$cartCount}}</span>
+                                <span class="position-absolute translate-middle badge rounded-pill bg-danger" id="cartCountItems"></span>
                             </a>
                         </li>
+
+                        <script>
+                            getCountItemsByUserId({{$user->id}});
+                        </script>
                     @endisset
                 </ul>
                 <div class="dropdown">
@@ -81,15 +78,6 @@
                        class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle"
                        id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi-person-circle h2"></i>
-                        {{--<span class="d-none d-sm-inline mx-1">
-                                @isset($user)
-                                <h6>{{$user->name}}</h6>
-                            @endisset
-
-                            @empty($user)
-                                <h6>User</h6>
-                            @endempty
-                            </span>--}}
                     </a>
                     <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
                         @empty($user)

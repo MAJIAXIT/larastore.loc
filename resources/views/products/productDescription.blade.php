@@ -13,13 +13,12 @@
                 <small>${{$product->price}}</small><br>
 
                 <div class="btn-group">
-                    <button class="btn btn-sm btn-outline-secondary" onclick="buttonAddClick({{$product->id}})">В
-                        корзину
-                    </button>
+                    <a href="" class="btn btn-sm btn-outline-secondary" onclick="buttonAddClick({{$product->id}})">В корзину
+                    </a>
                 </div>
                 </div>
             @endforeach
         </div>
     </div>
-    <script src="{{asset('myjs/addNewItemToCart.js')}}"></script>
+    <script src="{{asset('myjs/cart.js')}}"></script>
 @endsection

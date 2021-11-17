@@ -46,8 +46,6 @@ class UsersController extends Controller
             return redirect('users/signin')->withErrors("User not found")->withInput();
         } else {
             Session::put('user', $user);
-            $cartCount = DB::table('cart_items')->where('user_id', '=', $user->id)->count();
-            Session::put('cartCount', $cartCount);
             return redirect('/');
         }
     }
