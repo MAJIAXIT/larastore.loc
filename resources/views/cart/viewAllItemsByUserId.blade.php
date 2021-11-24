@@ -34,9 +34,9 @@
             </div>
             @endforeach
             </ul>
-            <button class="w-100 btn btn-primary btn-lg" style="max-width: 1320px;" type="submit">
+            <a href="/purchases/make" class="w-100 btn btn-primary btn-lg" style="max-width: 1320px;" type="button" onclick="alert('Покупка совершена!')">
                 Оформить заказ
-            </button>
+            </a>
             @endif
             <script src="{{asset('myjs/cart.js')}}"></script>
 @endsection

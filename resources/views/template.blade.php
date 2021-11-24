@@ -95,7 +95,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-sm p-3 min-vh-100">
             <div class="album py-5 ">
                 @yield('content')
