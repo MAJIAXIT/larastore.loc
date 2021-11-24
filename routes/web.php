@@ -10,6 +10,7 @@ Route::get('/', 'ProductsController@home');
 
 Route::get('/productDescription/{id}', 'ProductsController@productDescription');
 
+/*users*/
 Route::get('/users/signin', 'UsersController@signIn');
 
 Route::post('/users/signin/check', 'UsersController@signInCheck');
@@ -20,10 +21,11 @@ Route::get('/users/signup', 'UsersController@signUp');
 
 Route::post('/users/signup/check', 'UsersController@signUpCheck');
 
-Route::get('/cart/view/{id}', 'CartController@viewAllItemsByUserId')->middleware(CheckSignin::class);
+/*cart*/
+Route::get('/cart/view', 'CartController@viewAllItemsForUser')->middleware(CheckSignin::class);
 
 Route::post('/cart/add/{productId}', 'CartController@addNewItemToUser')->middleware(CheckSigninAjax::class);
 
 Route::post('/cart/delete/{id}', 'CartController@deleteItemById')->middleware(ChecksigninAjax::class);
 
-Route::post('/cart/getCountItems/{userId}', 'CartController@getCountItemsByUserId')->middleware(ChecksigninAjax::class);
+Route::post('/cart/getCountItemsForUser', 'CartController@getCountItemsForUser')->middleware(ChecksigninAjax::class);

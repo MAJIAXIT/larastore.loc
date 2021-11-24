@@ -23,6 +23,8 @@ class ProductsController extends Controller
 
     public function home()
     {
-        return view('home');
+        $findProducts = DB::table('products')->get()->all();
+
+        return view('home')->with('products', $findProducts);
     }
 }

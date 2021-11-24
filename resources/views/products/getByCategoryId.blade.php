@@ -19,7 +19,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a class="btn btn-sm btn-outline-secondary"
-                                   onclick="buttonAddClick({{$product->id}},{{$user->id}})">В корзину
+                                   onclick="buttonAddClick({{$product->id}})">В корзину
                                 </a>
                                 <a class="btn btn-sm btn-outline-secondary" href="/productDescription/{{$product->id}}">Подробнее</a>
                             </div>

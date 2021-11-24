@@ -11,7 +11,6 @@
                 <h3>{{$product->name}}</h3>
                 <h6>{{$product->description}}</h6>
                 <small>${{$product->price}}</small><br>
-
                 <div class="btn-group">
                     <a href="" class="btn btn-sm btn-outline-secondary" onclick="buttonAddClick({{$product->id}})">В корзину
                     </a>

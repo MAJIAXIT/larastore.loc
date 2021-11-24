@@ -28,7 +28,7 @@
                     </div>
                     <a class="nav-link py-3 px-2 d-flex justify-content-end">
                         <i class="bi-trash fs-1 btn" style="color: black"
-                           onclick="buttonDeleteClick({{$cartItem->id}},{{$user->id}})"></i>
+                           onclick="buttonDeleteClick({{$cartItem->id}})"></i>
                     </a>
                 </div>
             </div>
