@@ -21,6 +21,10 @@ Route::get('/users/signup', 'UsersController@signUp');
 
 Route::post('/users/signup/check', 'UsersController@signUpCheck');
 
+Route::get('/users/personalArea', 'UsersController@personalArea')->middleware(CheckSignin::class);
+
+Route::get('/users/personalArea/check', 'UsersController@personalAreaCheck')->middleware(CheckSignin::class);
+
 /*cart*/
 Route::get('/cart/view', 'CartController@viewAllItemsForUser')->middleware(CheckSignin::class);
 

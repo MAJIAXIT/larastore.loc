@@ -11,7 +11,7 @@
 
         @foreach($products as $product)
             <div class="col">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm" style="border-radius: 25px;">
                     <img src="{{asset($product->image_path)}}">
 
                     <div class="card-body">

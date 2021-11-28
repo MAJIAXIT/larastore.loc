@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Models\CartItem;
+use http\QueryString;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,7 +15,7 @@ class CartController extends Controller
         $user = Session::get('user');
         $userId = $user->id;
 
-        $cartItems =  CartItem::where('user_id','=', $userId)->get();
+        $cartItems =  CartItem::where('user_id','=', $userId)->get()->unique('product_id');
 
         return view('cart.viewAllItemsByUserId')->with('cartItems', $cartItems);
     }

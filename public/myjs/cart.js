@@ -22,7 +22,6 @@ function buttonDeleteClick(id){
         success: function (data) {
             let cartId = "#cart_"+id;
             $(cartId)[0].remove();
-
             getCountItemsByUserId();
         },
 

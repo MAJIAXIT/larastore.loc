@@ -40,19 +40,19 @@
             </div>
         @endif
         <div class="form-floating">
-            <input type="text" class="form-control" id="floatingInput" name="login">
+            <input type="text" class="form-control" name="login">
             <label for="floatingInput">Логин</label>
         </div>
 
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" name="password">
+            <input type="password" class="form-control" name="password">
             <label for="floatingPassword">Пароль</label>
         </div>
 
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
+        <button class="w-100 btn btn-lg btn-dark" type="submit">Войти</button>
     </form>
     <br>
-    Ещё нет аккаунта? <a href="/users/signup">Зарегестрироваться</a>
+    Ещё нет аккаунта? <a class="link-dark" href="/users/signup">Зарегестрироваться</a>
 </main>
 
 

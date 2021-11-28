@@ -41,29 +41,29 @@
         @endif
 
         <div class="form-floating">
-            <input type="text" class="form-control" id="floatingInput" name="name">
+            <input type="text" class="form-control" name="name">
             <label for="floatingInput">Имя</label>
         </div><br>
 
         <div class="form-floating">
-            <input type="text" class="form-control" id="floatingInput" name="email">
+            <input type="text" class="form-control" name="email">
             <label for="floatingInput">Email</label>
         </div><br>
 
         <div class="form-floating">
-            <input type="text" class="form-control" id="floatingInput" name="login">
+            <input type="text" class="form-control" name="login">
             <label for="floatingInput">Логин</label>
         </div><br>
 
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" name="password">
+            <input type="password" class="form-control" name="password">
             <label for="floatingPassword">Пароль</label>
         </div><br>
 
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Зарегестрироваться</button>
+        <button class="w-100 btn btn-lg btn-dark" type="submit">Зарегестрироваться</button>
     </form>
     <br>
-    Уже есть аккаунт? <a href="/users/signin">Войти</a>
+    Уже есть аккаунт? <a class="link-dark" href="/users/signin">Войти</a>
 </main>
 </body>
 </html>

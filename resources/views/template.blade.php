@@ -64,7 +64,7 @@
                             <a href="/cart/view" class="nav-link py-3 px-2" data-bs-toggle="tooltip"
                                data-bs-placement="right" data-bs-original-title="Cart">
                                 <i class="bi bi-basket3 fs-1" style="color: black"></i>
-                                <span class="position-absolute translate-middle badge rounded-pill bg-danger" id="cartCountItems"></span>
+                                <span class="position-absolute translate-middle badge rounded-pill bg-dark" id="cartCountItems"></span>
                             </a>
                         </li>
 
@@ -86,7 +86,7 @@
                         @endempty
 
                         @isset($user)
-                            <li><p class="dropdown-item" style="pointer-events: none;">{{$user->name}}:</p></li>
+                            <li><a class="dropdown-item" href="/users/personalArea">{{$user->name}}:</a></li>
                             <hr class="dropdown-divider">
                             <li><a class="dropdown-item" href="/users/logout">Выйти</a></li>
                             <li><a class="dropdown-item" href="/cart/view">Корзина</a></li>
@@ -100,6 +100,7 @@
                 @yield('content')
             </div>
         </div>
+
     </div>
 </div>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>

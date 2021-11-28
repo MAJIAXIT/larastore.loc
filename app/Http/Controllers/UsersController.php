@@ -49,12 +49,6 @@ class UsersController extends Controller
             return redirect('/');
         }
     }
-
-    public function privateZone()
-    {
-        return "privateZone";
-    }
-
     public function logOut()
     {
         Session::forget('user');
@@ -96,6 +90,49 @@ class UsersController extends Controller
 
         } else {
             return redirect('users/signup')->withErrors("User with this login already exist")->withInput();
+        }
+    }
+
+    public function personalArea(){
+        return view('users.personalArea');
+    }
+
+    public function personalAreaCheck(Request $request){
+        $valid = $request->validate([
+            'login' => 'required|min:3|max:20',
+            'password' => 'required|min:3|max:20',
+            'name' => 'required|min:3|max:20',
+            'email' => 'required|min:3|max:20'
+        ]);
+
+        $login = $request->input('login');
+        $password = $request->input('password');
+        $name = $request->input('name');
+        $email = $request->input('email');
+
+        $user_exists = DB::table('users')->where(
+            [
+                ['login', '=', $login]
+            ]
+        )->first();
+
+        if ($user_exists == null or $login) {
+
+            DB::table('users')->where('login','=', $login)->update(
+                [
+                    'name' => $name,
+                    'email' => $email,
+                    'login' => $login,
+                    'password' => $password
+                ]
+            );
+
+            Session::forget('user');
+            $user = DB::table('users')->where('login', '=', $login)->first();
+            Session::put('user', $user);
+            return redirect('users/personalArea');
+        } else {
+            return redirect('users/personalArea')->withErrors("User with this login already exist")->withInput();
         }
     }
 }
