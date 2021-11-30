@@ -17,7 +17,7 @@
                 $product = $cartItem->product;
                 $productCount = DB::table('cart_items')->where('product_id','=', $product->id)->get()->count();
             @endphp
-            <div class="card mb-3 shadow-sm" id="cart_{{$cartItem->id}}"
+            <div class="card mb-3 shadow-sm" id="cart_{{$product->id}}"
                  style="max-width: 1320px; border-radius: 25px;">
                 <div class="row">
                     <div type="button" class="col-sm-2"
@@ -35,7 +35,7 @@
                             {{--<button class="btn fs-3" onclick="buttonAddClick({{$product->id}})">+</button>--}}
                         </div>
                         <a class="nav-link d-flex justify-content-end">
-                            <i class="bi-trash fs-1 btn" style="color: black" onclick="buttonDeleteClick({{$cartItem->id}})"></i>
+                            <i class="bi-trash fs-1 btn" style="color: black" onclick="buttonDeleteClick({{$product->id}})"></i>
                         </a>
                     </div>
                 </div>

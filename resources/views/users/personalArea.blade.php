@@ -7,7 +7,7 @@
 @section('title')Personal area @endsection
 
 @section('content')
-    <div class="col">
+    <div class="col ">
         <form action="/users/personalArea/check">
 
             @if($errors->any())

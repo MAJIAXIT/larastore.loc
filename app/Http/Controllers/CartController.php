@@ -33,7 +33,14 @@ class CartController extends Controller
 
     public function deleteItemById($id)
     {
-        CartItem::destroy($id);
+        $user = Session::get('user');
+        $userId = $user->id;
+        CartItem::where(
+            [
+                ['user_id', '=', $userId],
+                ['product_id', '=', $id]
+            ]
+        )->delete();
     }
 
     public function getCountItemsForUser()
