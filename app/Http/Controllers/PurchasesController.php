@@ -30,6 +30,6 @@ class PurchasesController extends Controller
 
         CartItem::where('user_id', '=', $userId)->delete();
 
-        return redirect("/cart/view");
+        return redirect("/users/personalArea");
     }
 }

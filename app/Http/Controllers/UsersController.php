@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Models\CartItem;
+use App\Http\Models\Product;
+use App\Http\Models\Purchase;
 use App\Http\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -94,7 +96,12 @@ class UsersController extends Controller
     }
 
     public function personalArea(){
-        return view('users.personalArea');
+
+        $user = Session::get('user');
+        $userId = $user->id;
+
+        $purchases = Purchase::where('user_id', '=', $userId)->get()->unique('product_id');
+        return view('users.personalArea')->with('purchases', $purchases);
     }
 
     public function personalAreaCheck(Request $request){

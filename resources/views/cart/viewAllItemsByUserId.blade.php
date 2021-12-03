@@ -17,10 +17,10 @@
                 $product = $cartItem->product;
                 $productCount = DB::table('cart_items')->where('product_id','=', $product->id)->get()->count();
             @endphp
-            <div class="card mb-3 shadow-sm" id="cart_{{$product->id}}"
+            <div class="card mb-3 shadow-sm col-sm-10" id="cart_{{$product->id}}"
                  style="max-width: 1320px; border-radius: 25px;">
                 <div class="row">
-                    <div type="button" class="col-sm-2"
+                    <div type="button" class="col-sm-3"
                          onclick="window.location.href='/productDescription/{{$product->id}}'">
                         <img src="{{asset($product->image_path)}}" class="img-fluid ">
                     </div>
@@ -42,7 +42,7 @@
             </div>
             @endforeach
             </ul>
-            <a href="/purchases/make" class="w-100 btn btn-dark btn-lg"  style="max-width: 1320px;" type="button"
+            <a href="/purchases/make" class="col-sm-10 btn btn-dark btn-lg"  style="max-width: 1320px;" type="button"
                onclick="alert('Покупка совершена!')">
                 Оформить заказ
             </a>
