@@ -9,7 +9,7 @@ $user = session('user');
 @section('content')
     <div class="d-flex flex-column flex-sm-row">
 
-        <div class="col-4 ">
+        <div class="col-sm-5">
             <form action="/users/personalArea/check">
 
                 @if ($errors->any())

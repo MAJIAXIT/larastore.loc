@@ -6,8 +6,6 @@ function buttonAddClick(productId) {
 
         success: function (data) {
             getCountItemsByUserId();
-
-            alert('<div class="alert alert-warning alert-dismissible fade show" role="alert"><strong>Added to a cart</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>')
         },
 
         error: function (msg) {
