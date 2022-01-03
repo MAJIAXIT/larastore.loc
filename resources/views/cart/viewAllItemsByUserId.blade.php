@@ -33,9 +33,13 @@
                             <p class="card-text">{{ $product->description }}</p>
                             <p class="card-text"><small class="text-muted">${{ $product->price }}</small></p>
 
-                            {{-- <button class="btn fs-3" onclick="buttonDeleteClick({{$cartItem->id}})">-</button> --}}
-                            <span id="productCountInCart" class="badge rounded-pill bg-dark">{{ $productCount }}</span>
-                            {{-- <button class="btn fs-3" onclick="buttonAddClick({{$product->id}})">+</button> --}}
+                            <button class="btn fs-3" onclick="buttonMinusClick({{ $product->id }})">-</button>
+
+                            <span id="countItemInCart_{{ $product->id }}"
+                                class="badge rounded-pill bg-dark">{{ $productCount }}</span>
+                                
+                            <button class="btn fs-3" onclick="buttonPlusClick({{ $product->id }})">+</button>
+
                         </div>
                         <a class="nav-link d-flex justify-content-end">
                             <i class="bi-trash fs-1 btn" style="color: black"

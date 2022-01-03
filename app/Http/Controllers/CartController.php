@@ -15,7 +15,7 @@ class CartController extends Controller
         $user = Session::get('user');
         $userId = $user->id;
 
-        $cartItems =  CartItem::where('user_id','=', $userId)->get()->unique('product_id');
+        $cartItems =  CartItem::where('user_id', '=', $userId)->get()->unique('product_id');
 
         return view('cart.viewAllItemsByUserId')->with('cartItems', $cartItems);
     }
@@ -48,6 +48,44 @@ class CartController extends Controller
         $user = Session::get('user');
         $userId = $user->id;
 
-        return CartItem::where('user_id','=',$userId)->count();
+        return CartItem::where('user_id', '=', $userId)->count();
+    }
+
+    public function buttonPlusClick($productId)
+    {
+        $user = Session::get('user');
+        $userId = $user->id;
+
+        $cartItem = new CartItem();
+        $cartItem->user_id = $userId;
+        $cartItem->product_id = $productId;
+        $cartItem->save();
+
+        return CartItem::where(
+            [
+                ['user_id', '=', $userId],
+                ['product_id', '=', $productId]
+            ]
+        )->count();
+    }
+
+    public function buttonMinusClick($productId)
+    {
+        $user = Session::get('user');
+        $userId = $user->id;
+
+        CartItem::where(
+            [
+                ['user_id', '=', $userId],
+                ['product_id', '=', $productId]
+            ]
+        )->first()->delete();
+
+        return CartItem::where(
+            [
+                ['user_id', '=', $userId],
+                ['product_id', '=', $productId]
+            ]
+        )->count();
     }
 }

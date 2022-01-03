@@ -47,3 +47,38 @@ function getCountItemsByUserId() {
     });
 }
 
+function buttonPlusClick(productId) {
+    $.ajax({
+        url: "/cart/buttonPlusClick/" + productId,
+        type: "POST",
+        data: { "_token": $('meta[name="csrf-token"]').attr('content') },
+
+        success: function (data) {
+            let spanCountItem = "#countItemInCart_" + productId;
+            $(spanCountItem)[0].innerHTML = data;
+            getCountItemsByUserId();
+        },
+
+        error: function (msg) {
+            alert("Ошибка обновления количества позиции в корзине +: " + msg.responseJSON.message);
+        }
+    });
+}
+
+function buttonMinusClick(productId) {
+    $.ajax({
+        url: "/cart/buttonMinusClick/" + productId,
+        type: "POST",
+        data: { "_token": $('meta[name="csrf-token"]').attr('content') },
+
+        success: function (data) {
+            let spanCountItem = "#countItemInCart_" + productId;
+            $(spanCountItem)[0].innerHTML = data;
+            getCountItemsByUserId();
+        },
+
+        error: function (msg) {
+            alert("Ошибка обновления количества позиции в корзине +: " + msg.responseJSON.message);
+        }
+    });
+}
