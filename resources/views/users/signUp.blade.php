@@ -13,7 +13,7 @@
 <main class="form-signin">
     <form method="post" action="/users/signup/check">
         @csrf
-        <h1 class="h3 mb-3 fw-normal">Регестрация</h1>
+        <h1 class="h3 mb-3 fw-normal">Регистрация</h1>
 
         @if($errors->any())
             <div class="alert alert-danger">
@@ -45,7 +45,7 @@
             <label for="floatingPassword">Пароль</label>
         </div><br>
 
-        <button class="w-100 btn btn-lg btn-dark" type="submit">Зарегестрироваться</button>
+        <button class="w-100 btn btn-lg btn-dark" type="submit">Зарегистрироваться</button>
     </form>
     <br>
     Уже есть аккаунт? <a class="link-dark" href="/users/signin">Войти</a>
